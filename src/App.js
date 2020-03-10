@@ -1,28 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Button } from 'antd';
-import './App.less';
-
-function App() {
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import routes from './router/index'
+console.log(routes)
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Button type="primary">Button</Button>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Redirect exact from="/" to="/home" />
+        <Redirect exact from="/home" to="/home/index" />
+        <Redirect exact from="/dice" to="/dice/home" />
+        <Redirect exact from="/rake" to="/rake/home" />
+        <Redirect exact from="/live" to="/live/home" />
+
+        {routes.map((route, i) => (
+          <RouteWithSubRoutes key={i} {...route} />
+        ))}
+
+        {/* 其他所有路由都跳到404 */}
+        {/* <Redirect from="*" to="/404" /> */}
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+// A special wrapper for <Route> that knows how to
+// handle "sub"-routes by passing them in a `routes`
+// prop to the component it renders.
+export function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      path={route.path}
+      exact={route.exact}
+      render={props => (
+        // pass the sub-routes down to keep nesting
+        <route.component {...props} routes={route.routes} />
+      )}
+    />
+  )
+}
