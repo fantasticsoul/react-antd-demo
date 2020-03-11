@@ -12,39 +12,53 @@
 //     kr: '한국어'
 // }
 export const supportLangs = [
-  {
-    text: 'English',
-    locale: 'en'
-  },
-  {
-    text: 'Pусский',
-    locale: 'ru'
-  },
-  {
-    text: 'Deutsch',
-    locale: 'de'
-  },
-  {
-    text: '简体中文',
-    locale: 'zh-CN'
-  },
-  {
-    text: 'Français',
-    locale: 'fr'
-  },
-  {
-    text: '한국어',
-    locale: 'kr'
-  },
+    {
+        text: 'English',
+        locale: 'en',
+    },
+    {
+        text: 'Pусский',
+        locale: 'ru',
+    },
+    {
+        text: 'Deutsch',
+        locale: 'de',
+    },
+    {
+        text: '简体中文',
+        locale: 'zh-CN',
+    },
+    {
+        text: 'Français',
+        locale: 'fr',
+    },
+    {
+        text: '한국어',
+        locale: 'kr',
+    },
 
-  {
-    text: 'Español',
-    locale: 'es'
-  },
-  {
-    text: 'Português',
-    locale: 'po'
-  }
+    {
+        text: 'Español',
+        locale: 'es',
+    },
+    {
+        text: 'Português',
+        locale: 'po',
+    },
+]
+export const supportWallets = [
+    {
+        text: 'Scatter',
+        locale: 'scatter',
+    },
+    {
+        text: 'TronLink',
+        locale: 'tronlink',
+    },
+    {
+        text: 'GuideWallet',
+        locale: 'guidewallet',
+    },
 ]
 
 export const telegram = 'https://t.me/WINk_org_official'
