@@ -3,14 +3,13 @@ import { Menu, Dropdown } from 'antd'
 import { CaretDownFilled } from '@ant-design/icons'
 import { supportLangs } from '../config'
 import Storage from '../utils/Storage'
+import { register } from 'concent'
 
-// export default function walletSelect() {
-//   return <div className={'walletSelect'}>钱包选择</div>
-// }
-
-export default class LangSelect extends React.Component {
+@register('foo')
+class LangSelect extends React.Component {
     state = {
         lang: supportLangs[0],
+        bar: 200,
     }
 
     handleMenuClick = e => {
@@ -21,6 +20,7 @@ export default class LangSelect extends React.Component {
     }
 
     render() {
+        const { lang, foo, bar } = this.state
         const menu = (
             <Menu onClick={this.handleMenuClick}>
                 {supportLangs.map((lang, idx) => (
@@ -32,9 +32,14 @@ export default class LangSelect extends React.Component {
             <Dropdown overlay={menu} trigger="click">
                 <a className="ant-dropdown-link" href="#/" onClick={e => e.preventDefault()}>
                     {this.state.lang.text}
+                    {lang}
+                    {foo}
+                    {bar}
                     <CaretDownFilled style={{ fontSize: '12px' }} />
                 </a>
             </Dropdown>
         )
     }
 }
+
+export default LangSelect

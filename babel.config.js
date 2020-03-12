@@ -8,13 +8,21 @@ const envPreset = [
         // 禁用模块化方案转换
         modules: false,
     },
-];
+]
 
 module.exports = function(api) {
-    api.cache(true);
+    api.cache(true)
     return {
         presets: ['@babel/preset-typescript', envPreset],
-        plugins: ['@babel/plugin-transform-runtime'],
+        plugins: [
+            '@babel/plugin-transform-runtime',
+            [
+                '@babel/plugin-proposal-decorators',
+                {
+                    legacy: true,
+                },
+            ],
+        ],
         env: {
             development: {
                 presets: [['@babel/preset-react', { development: true }]],
@@ -29,5 +37,5 @@ module.exports = function(api) {
                 ],
             },
         },
-    };
-};
+    }
+}
