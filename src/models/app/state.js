@@ -1,6 +1,7 @@
 export function getInitialState() {
     return {
         lang: '',
+        foo: 100,
     }
 }
 
