@@ -63,6 +63,7 @@ export const supportWallets = [
 
 export const telegram = 'https://t.me/WINk_org_official'
 export const twitter = 'https://twitter.com/WINkorg'
-export const whitePaper = lang => './pdf/whitepaper_' + lang + '.pdf'
-export const roadmap = './pdf/WINk_Roadmap_2020.pdf'
+
 export const trontrade = 'https://trontrade.io/'
+export const whitePaper = lang => `${window.location.origin}/pdf/whitepaper_${lang}.pdf`
+export const roadmap = `${window.location.origin}/pdf/WINk_Roadmap_2020.pdf`
