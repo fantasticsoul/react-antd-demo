@@ -25,7 +25,13 @@ export default function Nav() {
                             </a>
                         </li>
                         <li>
-                            <a href="#/" onClick={() => setVisible(true)}>
+                            <a
+                                href="#/"
+                                onClick={e => {
+                                    e.preventDefault()
+                                    setVisible(true)
+                                }}
+                            >
                                 空投
                                 {/* <BorderOutlined style={{ fontSize: '12px' }} /> */}
                             </a>

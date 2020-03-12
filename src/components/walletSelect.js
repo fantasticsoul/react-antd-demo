@@ -3,7 +3,7 @@ import { Menu, Dropdown } from 'antd'
 import { CaretDownFilled } from '@ant-design/icons'
 import { supportWallets } from '../config'
 
-export default class OverlayVisible extends React.Component {
+export default class walletSelect extends React.Component {
     state = {
         lang: supportWallets[0],
     }

@@ -7,7 +7,7 @@ import { supportLangs } from '../config'
 //   return <div className={'walletSelect'}>钱包选择</div>
 // }
 
-export default class OverlayVisible extends React.Component {
+export default class LangSelect extends React.Component {
     state = {
         lang: supportLangs[0],
     }
