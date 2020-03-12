@@ -2,6 +2,7 @@ import React from 'react'
 import { Menu, Dropdown } from 'antd'
 import { CaretDownFilled } from '@ant-design/icons'
 import { supportLangs } from '../config'
+import Storage from '../utils/Storage'
 
 // export default function walletSelect() {
 //   return <div className={'walletSelect'}>钱包选择</div>
@@ -16,7 +17,7 @@ export default class LangSelect extends React.Component {
         console.log(e)
         this.setState({ lang: supportLangs[e.key] })
         // TODO 存到localStorage，并存到全局状态
-        window.localStorage.setItem('selectedLang', JSON.stringify(supportLangs[e.key]))
+        Storage.set('selectedLang', supportLangs[e.key])
     }
 
     render() {
