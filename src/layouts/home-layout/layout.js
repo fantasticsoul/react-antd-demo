@@ -5,6 +5,7 @@ import { RouteWithSubRoutes } from '../../App'
 import Header from './header'
 import Nav from './nav'
 import Footer from './footer'
+import Others from './others'
 
 import './index.less'
 
@@ -24,6 +25,7 @@ export default function homeLayout({ routes }) {
             </section>
 
             <Footer></Footer>
+            <Others></Others>
         </div>
     )
 }

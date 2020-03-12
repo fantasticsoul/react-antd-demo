@@ -67,3 +67,4 @@ export const twitter = 'https://twitter.com/WINkorg'
 export const trontrade = 'https://trontrade.io/'
 export const whitePaper = lang => `${window.location.origin}/pdf/whitepaper_${lang}.pdf`
 export const roadmap = `${window.location.origin}/pdf/WINk_Roadmap_2020.pdf`
+export const feedback = 'https://docs.google.com/forms/d/e/1FAIpQLSd8QiSucsHjg67vJAn_5x9_Avt72DnPgCNEsk0nFTwbZ-gzZg/viewform?usp=sf_link'
