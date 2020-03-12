@@ -14,7 +14,7 @@ export default function header() {
                     rel="noopener noreferrer"
                     title="out-link feedback"
                 >
-                    <img src={ServiceIcon} />
+                    <img src={ServiceIcon} alt="service icon" />
                 </a>
             </div>
 
