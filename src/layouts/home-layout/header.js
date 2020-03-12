@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import LangSelect from '../../components/langSelect'
 import WalletSelect from '../../components/walletSelect'
+import { Button } from 'antd'
 
 export default function header() {
     return (
@@ -12,10 +13,10 @@ export default function header() {
             </Link>
             <LangSelect></LangSelect>
 
-            <div className="for" id="login-btn" style={{ marginLeft: 'auto' }}>
+            {/* 技巧：marginLeft: 'auto'可以使flex分成左右两边 */}
+            <Button type="primary" style={{ marginLeft: 'auto', marginRight: '30px' }}>
                 Login
-                {/* {address == '' ? <button onClick={() => Wallet.checkLogin()}>Login</button> : Common.parseName(address)} */}
-            </div>
+            </Button>
             <WalletSelect></WalletSelect>
         </header>
     )

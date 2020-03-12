@@ -29,7 +29,7 @@ export default class OverlayVisible extends React.Component {
         )
         return (
             <Dropdown overlay={menu} trigger="click">
-                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                <a className="ant-dropdown-link" href="#/" onClick={e => e.preventDefault()}>
                     {this.state.lang.text}
                     <CaretDownFilled style={{ fontSize: '12px' }} />
                 </a>
