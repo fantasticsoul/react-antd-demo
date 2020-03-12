@@ -6,7 +6,7 @@ import Storage from '../utils/Storage'
 import { selectedLang } from '../utils/StorageTypes'
 import { register } from 'concent'
 
-@register('app')
+@register({ module: 'app', watchedKeys: ['lang'] })
 class LangSelect extends React.Component {
     state = {
         lang: supportLangs[0], // 其实这里的lang会被全剧状态的lang覆盖！
