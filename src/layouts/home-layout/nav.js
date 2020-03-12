@@ -5,21 +5,30 @@ import { trontrade, whitePaper, roadmap, telegram, twitter } from '../../config/
 
 export default function nav() {
     return (
-        <div className={'nav-bg'}>
+        <section className={'nav-bg'}>
             <nav className={'nav'}>
                 <ul className={'nav-link'}>
                     <li>
                         <NavLink to="/home/index">首页</NavLink>
+                    </li>
+                    <li className={'hide'}>
+                        <a
+                            href={trontrade}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="out-link trontrad"
+                        >
+                            交易所
+                        </a>
                     </li>
                     <li>
                         <a
                             href={trontrade}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hide"
                             title="out-link trontrad"
                         >
-                            交易所
+                            空投
                         </a>
                     </li>
                     <li>
@@ -64,6 +73,6 @@ export default function nav() {
                     </li>
                 </ul>
             </nav>
-        </div>
+        </section>
     )
 }

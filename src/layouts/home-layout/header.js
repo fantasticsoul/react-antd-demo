@@ -7,7 +7,7 @@ import { Button } from 'antd'
 
 export default function header() {
     return (
-        <div className={'header-bg'}>
+        <section className={'header-bg'}>
             <header className={'header'}>
                 <Link to="/home" style={{ height: '60px' }}>
                     <img src={logo} alt="logo" className="platform-logo" height="60" />
@@ -20,6 +20,6 @@ export default function header() {
                 </Button>
                 <WalletSelect></WalletSelect>
             </header>
-        </div>
+        </section>
     )
 }
