@@ -17,3 +17,5 @@
   688 B (+8 B)         build/static/js/main.758cafde.chunk.js
   556 B                build/static/css/main.0ee68e38.chunk.css
 ```
+
+2、使用 `concent`： [concent](https://concentjs.github.io/concent-doc/guide/quick-start)
