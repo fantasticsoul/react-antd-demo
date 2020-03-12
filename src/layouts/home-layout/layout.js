@@ -11,12 +11,9 @@ import './index.less'
 export default function homeLayout({ routes }) {
     return (
         <div className={'home-layout'}>
-            <div className={'header-bg'}>
-                <Header></Header>
-            </div>
-            <div className={'nav-bg'}>
-                <Nav></Nav>
-            </div>
+            <Header></Header>
+            <Nav></Nav>
+
             {/* /home/index：轮播图；/home/tutorial：游戏教程 */}
             <section className={'home-content'}>
                 <Switch>
@@ -26,9 +23,7 @@ export default function homeLayout({ routes }) {
                 </Switch>
             </section>
 
-            <div className={'footer-bg'}>
-                <Footer></Footer>
-            </div>
+            <Footer></Footer>
         </div>
     )
 }
