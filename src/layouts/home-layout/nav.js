@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Modal } from 'antd'
-import { BorderOutlined, LinkOutlined } from '@ant-design/icons'
+import { LinkOutlined, TwitterOutlined } from '@ant-design/icons'
 import { trontrade, whitePaper, roadmap, telegram, twitter } from '../../config/index'
 
 export default function Nav() {
@@ -58,24 +58,17 @@ export default function Nav() {
                         </li>
                     </ul>
 
-                    {/* 联系方式，推特、电报等 */}
+                    {/* 联系方式，电报、推特等 */}
                     <ul className={'nav-contact'}>
                         <li>
                             <a href={telegram} target="_blank" rel="noopener noreferrer">
-                                telegram
-                                <i
-                                    className="iconfont icon-telegram"
-                                    style={{ fontSize: '20px' }}
-                                ></i>
+                                {/* // TODO 改为 电报 */}
+                                <TwitterOutlined />
                             </a>
                         </li>
                         <li>
                             <a href={twitter} target="_blank" rel="noopener noreferrer">
-                                twitter
-                                <i
-                                    className="iconfont icon-twitter"
-                                    style={{ fontSize: '20px' }}
-                                ></i>
+                                <TwitterOutlined />
                             </a>
                         </li>
                     </ul>
