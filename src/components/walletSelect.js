@@ -2,19 +2,17 @@ import React from 'react'
 import { Menu, Dropdown } from 'antd'
 import { CaretDownFilled } from '@ant-design/icons'
 import { supportWallets } from '../config'
+import Storage from '../utils/Storage'
+import { selectedWallet } from '../utils/StorageTypes'
+import { register } from 'concent'
 
-export default class walletSelect extends React.Component {
-    state = {
-        lang: supportWallets[0],
-    }
-
+@register({ module: 'app', watchedKeys: ['wallet'] })
+class walletSelect extends React.Component {
     handleMenuClick = e => {
-        console.log(e)
-        this.setState({ lang: supportWallets[e.key] })
-    }
-
-    handleVisibleChange = flag => {
-        this.setState({ visible: flag })
+        const targetObj = supportWallets[e.key]
+        // 存到localStorage，并存到全局状态
+        Storage.set(selectedWallet, targetObj)
+        this.ctx.dispatch('setWallet', targetObj)
     }
 
     render() {
@@ -28,10 +26,12 @@ export default class walletSelect extends React.Component {
         return (
             <Dropdown overlay={menu} trigger="click">
                 <a className="ant-dropdown-link" href="#/" onClick={e => e.preventDefault()}>
-                    {this.state.lang.text}
+                    {this.state.wallet.text}
                     <CaretDownFilled style={{ fontSize: '12px' }} />
                 </a>
             </Dropdown>
         )
     }
 }
+
+export default walletSelect

@@ -8,15 +8,11 @@ import { register } from 'concent'
 
 @register({ module: 'app', watchedKeys: ['lang'] })
 class LangSelect extends React.Component {
-    state = {
-        lang: supportLangs[0], // 其实这里的lang会被全剧状态的lang覆盖！
-    }
-
     handleMenuClick = e => {
-        console.log(e)
-        this.setState({ lang: supportLangs[e.key] })
-        // TODO 存到localStorage，并存到全局状态
-        Storage.set(selectedLang, supportLangs[e.key])
+        const targetObj = supportLangs[e.key]
+        // 存到localStorage，并存到全局状态
+        Storage.set(selectedLang, targetObj)
+        this.ctx.dispatch('setLang', targetObj)
     }
 
     render() {
